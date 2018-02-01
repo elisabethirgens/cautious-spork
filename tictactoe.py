@@ -1,30 +1,32 @@
 print("Welcome! Let’s play a game of tic-tac-toe.")
 
-playerA1 = input("X: ")
-print(f"Player X: {playerA1}")
+moves = ['A1', 'B2', 'A3', 'B4', 'A5', 'B6', 'A7', 'B8', 'A9']
 
-playerB2 = input("0: ")
-print(f"Player 0: {playerB2}")
+moves[0] = input("X: ")
+print(f"Player X: {moves[0]}")
 
-playerA3 = input("X: ")
-print(f"Player X: {playerA3}")
+moves[1] = input("0: ")
+print(f"Player 0: {moves[1]}")
 
-playerB4 = input("0: ")
-print(f"Player 0: {playerB4}")
+moves[2] = input("X: ")
+print(f"Player X: {moves[2]}")
 
-playerA5 = input("X: ")
-print(f"Player X: {playerA5}")
+moves[3] = input("0: ")
+print(f"Player 0: {moves[3]}")
 
-playerB6 = input("0: ")
-print(f"Player 0: {playerB6}")
+moves[4] = input("X: ")
+print(f"Player X: {moves[4]}")
 
-playerA7 = input("X: ")
-print(f"Player X: {playerA7}")
+moves[5] = input("0: ")
+print(f"Player 0: {moves[5]}")
 
-playerB8 = input("0: ")
-print(f"Player 0: {playerB8}")
+moves[6] = input("X: ")
+print(f"Player X: {moves[6]}")
 
-playerA9 = input("X: ")
-print(f"Player X: {playerA9}")
+moves[7] = input("0: ")
+print(f"Player 0: {moves[7]}")
+
+moves[8] = input("X: ")
+print(f"Player X: {moves[8]}")
 
 print("Done! Sry, I have no idea yet if anyone won.")
