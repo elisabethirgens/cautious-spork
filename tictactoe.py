@@ -3,7 +3,7 @@ print("Welcome! Let’s play a game of tic-tac-toe.")
 moves = [ ]
 
 for playermove in range(0,9):
-    playermove = input(">: ")
+    playermove = input(">>> ")
     print(f"Player X or 0 said: {playermove}")
     moves.append(playermove)
 
