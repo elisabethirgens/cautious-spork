@@ -8,7 +8,7 @@ for playermove in range(0,9):
     moves.append(playermove)
 
 print("Done! Sry, I have no idea yet if anyone won.")
-print("============================================")
+print('=' * 40)
 print("But look! Here are your moves:")
 print(f"{moves}")
-print("============================================")
+print('=' * 40)
