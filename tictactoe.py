@@ -2,9 +2,12 @@ def game():
     moves = { }
     i = 1
 
-    while i <= 9:
-        moves[i] = input(">>> ")
-        print(f"Player X or 0 said: {moves[i]}")
+    while i <= 8:
+        moves[i] = input("X >>> ")
+        print(f"Player X: {moves[i]}")
+        i += 1
+        moves[i] = input("0 >>> ")
+        print(f"Player 0: {moves[i]}")
         i += 1
 
     print('=' * 40)
