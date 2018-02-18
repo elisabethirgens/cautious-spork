@@ -1,16 +1,15 @@
 def game():
-    moves = { }
-    i = 1
+
+    moves = [ ]
 
     while len(moves) < 8:
-        moves[i] = input("X >>> ")
-        print(f"Player X: {moves[i]}")
-        i += 1
-        moves[i] = input("0 >>> ")
-        print(f"Player 0: {moves[i]}")
-        i += 1
+        playermove = input("X >>> ")
+        print(f"Player X: {playermove}")
+        moves.append(playermove)
+        playermove = input("0 >>> ")
+        print(f"Player 0: {playermove}")
+        moves.append(playermove)
 
-    print('=' * 40)
     print(f"{moves}")
 
 game()
