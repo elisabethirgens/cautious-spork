@@ -27,6 +27,14 @@ def game():
             next_turn_is_x = True
             game()
 
+    elif len(empty_squares) == 1:
+        playermove = empty_squares[0]
+        empty_squares.remove(playermove)
+        playerX_moves.append(playermove)
+        print(">>> POSITIONS by X: ", playerX_moves)
+        print(">>> POSITIONS by 0: ", player0_moves)
+        print(">>> Empty ", empty_squares)
+
     else:
         print("game over")
 
