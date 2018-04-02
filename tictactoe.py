@@ -22,8 +22,3 @@ while len(empty_squares) > 1:
         print(">>> POSITIONS by 0: ", player0_moves)
         print(">>> Empty ", empty_squares)
         next_turn_is_x = True
-
-    elif len(empty_squares) == 1:
-        print("One last square. This move is given.")
-    else:
-        print("No empty squares. Game over.")
