@@ -8,17 +8,19 @@ while i < 9:
 
     if next_turn_is_x == True and len(empty_squares) > 1:
         playermove = int(input("Player X: "))
+        empty_squares.remove(playermove)
         playerX_moves.append(playermove)
         print(">>> POSITIONS by X: ", playerX_moves)
-        empty_squares.remove(playermove)
+        print(">>> POSITIONS by 0: ", player0_moves)
         print(">>> Empty ", empty_squares)
         next_turn_is_x = False
         i += 1
     if next_turn_is_x == False and len(empty_squares) > 1:
         playermove = int(input("Player 0: "))
-        player0_moves.append(playermove)
-        print(">>> POSITIONS by 0: ", player0_moves)
         empty_squares.remove(playermove)
+        player0_moves.append(playermove)
+        print(">>> POSITIONS by X: ", playerX_moves)
+        print(">>> POSITIONS by 0: ", player0_moves)
         print(">>> Empty ", empty_squares)
         next_turn_is_x = True
         i += 1
