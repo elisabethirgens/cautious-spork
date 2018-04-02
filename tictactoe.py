@@ -10,6 +10,7 @@ if next_turn_is_x == True and len(empty_squares) > 1:
     print(">>>>>>>>>>", playerX_moves)
     empty_squares.remove(playermove)
     print(">>> Empty ", empty_squares)
+    next_turn_is_x = False
 elif next_turn_is_x == False and len(empty_squares) > 1:
     print("We’ve got empty squares. Player 0: ")
     playermove = int(input())
@@ -17,6 +18,7 @@ elif next_turn_is_x == False and len(empty_squares) > 1:
     print(">>>>>>>>>>", player0_moves)
     empty_squares.remove(playermove)
     print(">>> Empty ", empty_squares)
+    next_turn_is_x = True
 elif len(empty_squares) == 1:
     print("One last square. This move is given.")
 else:
