@@ -1,6 +1,7 @@
 empty_squares = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 playerX_moves = []
 player0_moves = []
+winningcombo_1 = [1, 2, 3]
 
 print("""
 Let’s play tic-tac-toe! The developer is a newbie python coder 🐍
@@ -22,6 +23,10 @@ def game():
             print(">>> Empty ", empty_squares)
             next_turn_is_x = False
 
+        if set(winningcombo_1).issubset(playerX_moves):
+            print(">>> Tic-tac-toe and 🥇  for X")
+            return
+
         if next_turn_is_x == False:
             playermove = int(input("\nPlayer 0: "))
             empty_squares.remove(playermove)
@@ -31,6 +36,10 @@ def game():
             print(">>> Empty ", empty_squares)
             next_turn_is_x = True
             game()
+
+        if set(winningcombo_1).issubset(player0_moves):
+            print(">>> Tic-tac-toe and 🥇  for 0")
+            return
 
     elif len(empty_squares) == 1:
         playermove = empty_squares[0]
