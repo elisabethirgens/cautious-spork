@@ -35,11 +35,12 @@ def game():
             print(">>> POSITIONS by 0: ", player0_moves)
             print(">>> Empty ", empty_squares)
             next_turn_is_x = True
-            game()
 
         if set(winningcombo_1).issubset(player0_moves):
             print(">>> Tic-tac-toe and 🥇  for 0")
             return
+
+        game()
 
     elif len(empty_squares) == 1:
         playermove = empty_squares[0]
