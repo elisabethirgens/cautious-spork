@@ -9,6 +9,11 @@ Let’s play tic-tac-toe! The developer is a newbie python coder 🐍
 so for now, plz only type integers from the empty list. 😜
 """)
 
+def game_state():
+    print(">>> POSITIONS by X: ", playerX_moves)
+    print(">>> POSITIONS by 0: ", player0_moves)
+    print(">>> Empty ", empty_squares)
+
 def game():
 
     if len(empty_squares) > 1:
@@ -19,9 +24,7 @@ def game():
             playermove = int(input("\nPlayer X: "))
             empty_squares.remove(playermove)
             playerX_moves.append(playermove)
-            print(">>> POSITIONS by X: ", playerX_moves)
-            print(">>> POSITIONS by 0: ", player0_moves)
-            print(">>> Empty ", empty_squares)
+            game_state()
             next_turn_is_x = False
 
         if set(winningcombos[0]).issubset(playerX_moves) or set(winningcombos[1]).issubset(playerX_moves) or set(winningcombos[2]).issubset(playerX_moves) or set(winningcombos[3]).issubset(playerX_moves) or set(winningcombos[4]).issubset(playerX_moves) or set(winningcombos[5]).issubset(playerX_moves) or set(winningcombos[6]).issubset(playerX_moves) or set(winningcombos[7]).issubset(playerX_moves):
@@ -32,9 +35,7 @@ def game():
             playermove = int(input("\nPlayer 0: "))
             empty_squares.remove(playermove)
             player0_moves.append(playermove)
-            print(">>> POSITIONS by X: ", playerX_moves)
-            print(">>> POSITIONS by 0: ", player0_moves)
-            print(">>> Empty ", empty_squares)
+            game_state()
             next_turn_is_x = True
 
         if set(winningcombos[0]).issubset(player0_moves) or set(winningcombos[1]).issubset(player0_moves) or set(winningcombos[2]).issubset(player0_moves) or set(winningcombos[3]).issubset(player0_moves) or set(winningcombos[4]).issubset(player0_moves) or set(winningcombos[5]).issubset(player0_moves) or set(winningcombos[6]).issubset(player0_moves) or set(winningcombos[7]).issubset(player0_moves):
@@ -47,9 +48,7 @@ def game():
         playermove = empty_squares[0]
         empty_squares.remove(playermove)
         playerX_moves.append(playermove)
-        print(">>> POSITIONS by X: ", playerX_moves)
-        print(">>> POSITIONS by 0: ", player0_moves)
-        print(">>> Empty ", empty_squares)
+        game_state()
 
     else:
         print("game over")
