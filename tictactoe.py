@@ -25,6 +25,14 @@ def player_wins():
         exit()
 
 
+def result_draw():
+    playermove = empty_squares[0]
+    empty_squares.remove(playermove)
+    playerX_moves.append(playermove)
+    game_state()
+    print("\n…and it's a draw. 👌\n")
+
+
 def game():
 
     while len(empty_squares) > 1:
@@ -49,9 +57,6 @@ def game():
 
         player_wins()
 
-    playermove = empty_squares[0]
-    empty_squares.remove(playermove)
-    playerX_moves.append(playermove)
-    game_state()
+    result_draw()
 
 game()
