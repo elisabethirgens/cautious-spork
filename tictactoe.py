@@ -14,6 +14,17 @@ def game_state():
     print(">>> POSITIONS by 0: ", player0_moves)
     print(">>> Empty ", empty_squares)
 
+
+def player_wins():
+    if set(winningcombos[0]).issubset(playerX_moves) or set(winningcombos[1]).issubset(playerX_moves) or set(winningcombos[2]).issubset(playerX_moves) or set(winningcombos[3]).issubset(playerX_moves) or set(winningcombos[4]).issubset(playerX_moves) or set(winningcombos[5]).issubset(playerX_moves) or set(winningcombos[6]).issubset(playerX_moves) or set(winningcombos[7]).issubset(playerX_moves):
+        print(">>> Tic-tac-toe and 🥇  for X")
+        exit()
+
+    elif set(winningcombos[0]).issubset(player0_moves) or set(winningcombos[1]).issubset(player0_moves) or set(winningcombos[2]).issubset(player0_moves) or set(winningcombos[3]).issubset(player0_moves) or set(winningcombos[4]).issubset(player0_moves) or set(winningcombos[5]).issubset(player0_moves) or set(winningcombos[6]).issubset(player0_moves) or set(winningcombos[7]).issubset(player0_moves):
+        print(">>> Tic-tac-toe and 🥇  for 0")
+        exit()
+
+
 def game():
 
     if len(empty_squares) > 1:
@@ -27,9 +38,7 @@ def game():
             game_state()
             next_turn_is_x = False
 
-        if set(winningcombos[0]).issubset(playerX_moves) or set(winningcombos[1]).issubset(playerX_moves) or set(winningcombos[2]).issubset(playerX_moves) or set(winningcombos[3]).issubset(playerX_moves) or set(winningcombos[4]).issubset(playerX_moves) or set(winningcombos[5]).issubset(playerX_moves) or set(winningcombos[6]).issubset(playerX_moves) or set(winningcombos[7]).issubset(playerX_moves):
-            print(">>> Tic-tac-toe and 🥇  for X")
-            return
+        player_wins()
 
         if next_turn_is_x == False:
             playermove = int(input("\nPlayer 0: "))
@@ -38,9 +47,7 @@ def game():
             game_state()
             next_turn_is_x = True
 
-        if set(winningcombos[0]).issubset(player0_moves) or set(winningcombos[1]).issubset(player0_moves) or set(winningcombos[2]).issubset(player0_moves) or set(winningcombos[3]).issubset(player0_moves) or set(winningcombos[4]).issubset(player0_moves) or set(winningcombos[5]).issubset(player0_moves) or set(winningcombos[6]).issubset(player0_moves) or set(winningcombos[7]).issubset(player0_moves):
-            print(">>> Tic-tac-toe and 🥇  for 0")
-            return
+        player_wins()
 
         game()
 
