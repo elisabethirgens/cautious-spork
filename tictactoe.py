@@ -27,7 +27,7 @@ def player_wins():
 
 def game():
 
-    if len(empty_squares) > 1:
+    while len(empty_squares) > 1:
 
         next_turn_is_x = True
 
@@ -49,15 +49,9 @@ def game():
 
         player_wins()
 
-        game()
-
-    elif len(empty_squares) == 1:
-        playermove = empty_squares[0]
-        empty_squares.remove(playermove)
-        playerX_moves.append(playermove)
-        game_state()
-
-    else:
-        print("game over")
+    playermove = empty_squares[0]
+    empty_squares.remove(playermove)
+    playerX_moves.append(playermove)
+    game_state()
 
 game()
