@@ -35,24 +35,16 @@ def game():
 
     while len(empty_squares) > 1:
 
-        next_turn_is_x = True
-
-        if next_turn_is_x == True:
-            playermove = int(input("\nPlayer X: "))
-            empty_squares.remove(playermove)
-            playerX_moves.append(playermove)
-            game_state()
-            next_turn_is_x = False
-
+        playermove = int(input("\nPlayer X: "))
+        empty_squares.remove(playermove)
+        playerX_moves.append(playermove)
+        game_state()
         player_wins()
 
-        if next_turn_is_x == False:
-            playermove = int(input("\nPlayer 0: "))
-            empty_squares.remove(playermove)
-            player0_moves.append(playermove)
-            game_state()
-            next_turn_is_x = True
-
+        playermove = int(input("\nPlayer 0: "))
+        empty_squares.remove(playermove)
+        player0_moves.append(playermove)
+        game_state()
         player_wins()
 
     result_draw()
