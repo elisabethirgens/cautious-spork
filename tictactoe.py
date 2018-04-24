@@ -26,9 +26,7 @@ def player_wins():
 
 
 def result_draw():
-    playermove = empty_squares[0]
-    empty_squares.remove(playermove)
-    playerX_moves.append(playermove)
+    playerX_moves.append(empty_squares.pop(0))
     game_state()
     print("\n…and it's a draw. 👌\n")
 
