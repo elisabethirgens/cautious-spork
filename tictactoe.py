@@ -27,6 +27,7 @@ def player_wins():
 
 def result_draw():
     playerX_moves.append(empty_squares.pop())
+    player_wins()
     game_state()
     print("\n…and it's a draw. 👌\n")
 
