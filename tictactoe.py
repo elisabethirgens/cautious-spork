@@ -15,20 +15,18 @@ def game_state():
     print(">>> Empty ", empty_squares)
 
 
-def player_wins():
-    if set(winningcombos[0]).issubset(playerX_moves) or set(winningcombos[1]).issubset(playerX_moves) or set(winningcombos[2]).issubset(playerX_moves) or set(winningcombos[3]).issubset(playerX_moves) or set(winningcombos[4]).issubset(playerX_moves) or set(winningcombos[5]).issubset(playerX_moves) or set(winningcombos[6]).issubset(playerX_moves) or set(winningcombos[7]).issubset(playerX_moves):
-        print(">>> Tic-tac-toe and 🥇  for X")
-        exit()
+def player_wins(player, moves):
 
-    elif set(winningcombos[0]).issubset(player0_moves) or set(winningcombos[1]).issubset(player0_moves) or set(winningcombos[2]).issubset(player0_moves) or set(winningcombos[3]).issubset(player0_moves) or set(winningcombos[4]).issubset(player0_moves) or set(winningcombos[5]).issubset(player0_moves) or set(winningcombos[6]).issubset(player0_moves) or set(winningcombos[7]).issubset(player0_moves):
-        print(">>> Tic-tac-toe and 🥇  for 0")
+    if set(winningcombos[0]).issubset(moves) or set(winningcombos[1]).issubset(moves) or set(winningcombos[2]).issubset(moves) or set(winningcombos[3]).issubset(moves) or set(winningcombos[4]).issubset(moves) or set(winningcombos[5]).issubset(moves) or set(winningcombos[6]).issubset(moves) or set(winningcombos[7]).issubset(moves):
+        print(">>> Tic-tac-toe and 🥇 for player " + player)
         exit()
 
 
 def result_draw():
     playerX_moves.append(empty_squares.pop())
-    player_wins()
     game_state()
+    player = 'X'
+    player_wins(player, playerX_moves)
     print("\n…and it's a draw. 👌\n")
 
 
@@ -36,17 +34,19 @@ def game():
 
     while len(empty_squares) > 1:
 
+        player = 'X'
         playermove = int(input("\nPlayer X: "))
         empty_squares.remove(playermove)
         playerX_moves.append(playermove)
         game_state()
-        player_wins()
+        player_wins(player, playerX_moves)
 
+        player = '0'
         playermove = int(input("\nPlayer 0: "))
         empty_squares.remove(playermove)
         player0_moves.append(playermove)
         game_state()
-        player_wins()
+        player_wins(player, player0_moves)
 
     result_draw()
 
